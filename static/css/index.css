@@ -53,6 +53,7 @@ body {
 
 .publication-authors {
     font-family: 'Google Sans', sans-serif;
+   
 }
 
 .publication-venue {
@@ -80,6 +81,7 @@ body {
 
 .author-block {
   display: inline-block;
+  margin: 0.2rem;
 }
 
 .publication-banner img {
@@ -164,4 +166,28 @@ body {
 
 .has-text-centered {
   text-align: center;
+}
+
+/* Ensure the navigation buttons are positioned correctly */
+.results-carousel .carousel-nav {
+  z-index: 10; /* Bring buttons to the front */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5); /* Optional: adds background for visibility */
+}
+
+
+
+/* Ensure images have some padding to avoid button overlap */
+.carousel-item img {
+  max-width: 100%;
+  height: auto;
+  padding: 30px; /* Increases space around images */
+}
+
+/* Increase the padding around the entire carousel */
+.results-carousel {
+  padding: 30px;
+  position: relative;
 }
