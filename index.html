@@ -174,22 +174,157 @@
 <!-- End Image carousel with descriptions -->
 
 <!--Quantitative Comparison -->
-<section class="section">
-  <div class="container">
-    <h2 class="title is-3 has-text-centered">Quantitative Comparison</h2>
-    <div class="columns is-centered">
-      <div class="column is-half has-text-centered">
-        <p>Consistent object-discovery performance of SLOT CONTRAST in comparison with SAVi, STEVE, VideoSAUR on MOVi-C, MOVi-E, and YouTube-VIS datasets. VideoSAURv2 is an improved version of the VideoSAUR trained on DINOv2 features. Both metrics are computed for the whole video (24 frames for MOVi, up to 76 frames for YouTube-VIS).</p>
-        <img src="static/images/discovery.png" alt="Object discovery" />
-      </div>
-      <div class="column is-half has-text-centered">
-        <p>Downstream task of predicting object dynamics. Comparison of predictions made by SlotFormer based on representations obtained from SLOT CONTRAST and from Feature Reconstruction.</p>
-        <img src="static/images/dynamics.png" alt="Object dynamics" />
-      </div>
+<div class="container" style="max-width: 960px;">
+  <div style="padding-bottom: 0.5em;" class="has-text-centered">
+    <h3 class="title is-4">Consistent Object-Discovery Performance Comparison</h3>
+  </div>
+  <div class="columns is-centered has-text-centered">
+    <div class="column">
+      <table class="table is-fullwidth is-hoverable">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th colspan="2">MOVi-C</th>
+            <th colspan="2">MOVi-E</th>
+            <th colspan="2">YouTube-VIS</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>FG-ARI ↑</th>
+            <th>mBO ↑</th>
+            <th>FG-ARI ↑</th>
+            <th>mBO ↑</th>
+            <th>FG-ARI ↑</th>
+            <th>mBO ↑</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SAVi</td>
+            <td>22.2</td>
+            <td>13.6</td>
+            <td>42.8</td>
+            <td>16.0</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>STEVE</td>
+            <td>36.1</td>
+            <td>26.5</td>
+            <td>50.6</td>
+            <td>26.6</td>
+            <td>15</td>
+            <td>19.1</td>
+          </tr>
+          <tr>
+            <td>VideoSAUR</td>
+            <td>64.8</td>
+            <td><strong>38.9</strong></td>
+            <td>73.9</td>
+            <td><strong>35.6</strong></td>
+            <td>28.9</td>
+            <td>26.3</td>
+          </tr>
+          <tr>
+            <td>VideoSAURv2</td>
+            <td>-</td>
+            <td>-</td>
+            <td>77.1</td>
+            <td>34.4</td>
+            <td>31.2</td>
+            <td>29.7</td>
+          </tr>
+          <tr style="background-color: #f1cfb8ff;">
+            <td><strong>SLOTCONTRAST</strong></td>
+            <td><strong>69.3</strong></td>
+            <td>32.7</td>
+            <td><strong>82.9</strong></td>
+            <td>29.2</td>
+            <td><strong>38.0</strong></td>
+            <td><strong>33.7</strong></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-</section>
-<!-- End Quantitative Comparison -->
+  <br />
+  <div style="font-size: 0.9em; text-align: left;">
+    <p><strong>Note:</strong> Metrics are computed over full videos (24 frames for MOVi, up to 76 frames for YouTube-VIS).</p>
+    <p>VideoSAURv2 uses DINOv2 features.</p>
+  </div>
+</div>
+<div style="margin-bottom: 30px;"></div> 
+<!-- Object Dynamics Prediction Comparison Table -->
+<div class="container" style="max-width: 960px;">
+  <style>
+    .horizontal-lines-only th,
+    .horizontal-lines-only td {
+      border-left: none !important;
+      border-right: none !important;
+    }
+    .horizontal-lines-only th,
+    .horizontal-lines-only td {
+      border-top: 1px solid #ddd;
+    }
+    .horizontal-lines-only thead tr:first-child th {
+      border-top: none;
+    }
+    .horizontal-lines-only tbody tr:last-child td {
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+
+  <div style="padding-bottom: 0.5em;" class="has-text-centered">
+    <h3 class="title is-4">Downstream Task: Predicting Object Dynamics</h3>
+    <p style="font-size: 0.95em;">Comparison of predictions made by SlotFormer (SF) based on representations obtained from <em>SLOT CONTRAST</em> and <em>Feature Reconstruction</em>.</p>
+  </div>
+
+  <div class="columns is-centered has-text-centered">
+    <div class="column">
+      <table class="table is-fullwidth is-hoverable horizontal-lines-only">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th colspan="2">MOVi-C</th>
+            <th colspan="2">MOVi-E</th>
+            <th colspan="2">YouTube-VIS</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>FG-ARI ↑</th>
+            <th>mBO ↑</th>
+            <th>FG-ARI ↑</th>
+            <th>mBO ↑</th>
+            <th>FG-ARI ↑</th>
+            <th>mBO ↑</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Feat. Rec. + SF</td>
+            <td>50.7</td>
+            <td>25.9</td>
+            <td>70.6</td>
+            <td>24.3</td>
+            <td>27.4</td>
+            <td>28.9</td>
+          </tr>
+          <tr style="background-color: #f1cfb8ff;">
+            <td><strong> SLOT CONTRAST + SF</strong></td>
+            <td><strong>63.8</strong></td>
+            <td>26.1</td>
+            <td>70.5</td>
+            <td><strong>24.9</strong></td>
+            <td><strong>29.2</strong></td>
+            <td><strong>29.6</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 
 <!-- Video carousel -->
 <section class="hero is-small">
