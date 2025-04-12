@@ -10,7 +10,7 @@ $(document).ready(function() {
         loop: true,
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 10000, // Set this to a higher value (e.g., 10000 for 10 seconds)
+        autoplaySpeed: 100000, // Set this to a higher value (e.g., 10000 for 10 seconds)
     }
 
     // Initialize all div with carousel class
