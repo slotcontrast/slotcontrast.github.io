@@ -155,7 +155,8 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
+      <div id="results-carousel" class="carousel results-carousel" data-size="1">
+
         <!-- Image 1 with description -->
         <div class="carousel-item">
           <h3 class="title is-4 has-text-centered" style="margin-bottom: 40px;">
@@ -340,47 +341,52 @@
       <h3 class="title is-4 has-text-centered" style="margin-bottom: 40px;">Qualitative Comparison</h3>
       
       <!-- Subtitles for SlotContrast and VideoSAURv2 -->
-      <div class="columns is-centered" style="margin-bottom: -20px;"> <!-- Reduced margin -->
+      <div class="columns is-centered" style="margin-bottom: -20px;">
         <div class="column is-one-quarter">
-          <h3 class="title is-4" style="margin-bottom: 0;">SLOT CONTRAST</h3> <!-- Removed margin-bottom -->
+          <h3 class="title is-4" style="margin-bottom: 0;">SLOT CONTRAST</h3>
         </div>
         <div class="column is-one-quarter">
-          <h3 class="title is-4" style="margin-bottom: 0;">VideoSAURv2</h3> <!-- Removed margin-bottom -->
+          <h3 class="title is-4" style="margin-bottom: 0;">VideoSAURv2</h3>
         </div>
       </div>
 
       <!-- Carousel -->
-      <div id="results-carousel" class="carousel results-carousel" style="max-width: 800px; margin: 0 auto;">
-        <!-- Item 1: Single video -->
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="150px" width="auto">
+      <div id="results-carousel" class="carousel results-carousel single-item-carousel" data-size="1" style="max-width: 800px; margin: 0 auto;">
+        <!-- Item 1 -->
+        <div class="item">
+          <video poster="" autoplay controls muted loop style="width: 100%; height: auto;">
+
             <source src="static/videos/comparisons/annotated/128.mp4" type="video/mp4">
           </video>
         </div>
 
-        <!-- Item 2: Single video -->
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="150px" width="auto">
-            <source src="static/videos/comparisons/annotated/160.mp4" type="video/mp4">
+        <!-- Item 2 -->
+        <div class="item">
+          <video poster="" autoplay controls muted loop style="width: 100%; height: auto;">
+
+            <source src="static/videos/comparisons/annotated/151.mp4" type="video/mp4">
           </video>
         </div>
 
-        <!-- Item 3: Single video -->
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="150px" width="auto">
-            <source src="static/videos/comparisons/annotated/151.mp4" type="video/mp4">
+        <!-- Item 3 -->
+        <div class="item">
+          <video poster="" autoplay controls muted loop style="width: 100%; height: auto;">
+
+            <source src="static/videos/comparisons/annotated/160.mp4" type="video/mp4">
           </video>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!--End Video carousel -->
+
+
+
 <!-- Example Dynamics -->
-<section class="hero is-small">
+<section class="hero is-small" style="margin-bottom: 20px;">
   <div class="hero-body">
     <div class="container">
-      <h3 class="title is-4 has-text-centered" style="margin-bottom: 40px;">Object Dynamics Prediction on MOVi-C dataset</h3>
+      <h3 class="title is-4 has-text-centered" style="margin-bottom: 20px;">Object Dynamics Prediction on MOVi-C dataset</h3>
       <div class="columns is-centered">
         <!-- Left Column for SlotContrast -->
         <div class="column is-one-quarter has-text-centered">
@@ -408,37 +414,46 @@
   </div>
 </section>
 <!--End Example Dynamics -->
-<!--Checkpoints-->
-<div style="display: flex; flex-direction: column; align-items: center; margin-top: 40px;">
-  <h3 class="title is-4 has-text-centered" style="margin-bottom: 40px;">Model Checkpoints</h3>
-  <table style="border-collapse: collapse; min-width: 750px; font-family: Arial, sans-serif; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
-    <thead style="background-color: #f7f7f7;">
-      <tr>
-        <th style="padding: 12px 20px; text-align: left; font-size: 16px;">Dataset</th>
-        <th style="padding: 12px 20px; text-align: left; font-size: 16px;">Model Variant</th>
-        <th style="padding: 12px 20px; text-align: left; font-size: 16px;">Checkpoint Link</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr style="background-color: #ffffff;">
-        <td style="padding: 12px 20px;">MOVi-C</td>
-        <td style="padding: 12px 20px;">ViT-S/14, DINOv2</td>
-        <td style="padding: 12px 20px;"><a href="https://huggingface.co/annamanasyan/slotcontrast/resolve/main/movi_c.ckpt" style="color: #007BFF; text-decoration: none;">Checkpoint</a></td>
-      </tr>
-      <tr style="background-color: #f9f9f9;">
-        <td style="padding: 12px 20px;">MOVi-E</td>
-        <td style="padding: 12px 20px;">ViT-B/14, DINOv2</td>
-        <td style="padding: 12px 20px;"><a href="https://huggingface.co/annamanasyan/slotcontrast/resolve/main/movi_e.ckpt" style="color: #007BFF; text-decoration: none;">Checkpoint</a></td>
-      </tr>
-      <tr style="background-color: #ffffff;">
-        <td style="padding: 12px 20px;">YT-VIS 2021</td>
-        <td style="padding: 12px 20px;">ViT-B/14, DINOv2</td>
-        <td style="padding: 12px 20px;"><a href="https://huggingface.co/annamanasyan/slotcontrast/resolve/main/ytvis.ckpt" style="color: #007BFF; text-decoration: none;">Checkpoint</a></td>
-      </tr>
-    </tbody>
-  </table>
+
+<!-- Checkpoints -->
+<div style="padding-bottom: 0.2em; padding-top: 0;" class="has-text-centered">
+  <h3 class="title is-4">Model Checkpoints</h3>
 </div>
-<!--End Checkpoints-->  
+
+<div class="columns is-centered has-text-centered">
+  <div class="column" style="max-width: 800px; margin: 0 auto;">
+    <table class="table is-fullwidth is-hoverable horizontal-lines-only">
+      <thead>
+        <tr>
+          <th>Dataset</th>
+          <th>Model Variant</th>
+          <th>Checkpoint Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MOVi-C</td>
+          <td>ViT-S/14, DINOv2</td>
+          <td><a href="https://huggingface.co/annamanasyan/slotcontrast/resolve/main/movi_c.ckpt">Checkpoint</a></td>
+        </tr>
+        <tr>
+          <td>MOVi-E</td>
+          <td>ViT-B/14, DINOv2</td>
+          <td><a href="https://huggingface.co/annamanasyan/slotcontrast/resolve/main/movi_e.ckpt">Checkpoint</a></td>
+        </tr>
+        <tr>
+          <td>YT-VIS 2021</td>
+          <td>ViT-B/14, DINOv2</td>
+          <td><a href="https://huggingface.co/annamanasyan/slotcontrast/resolve/main/ytvis.ckpt">Checkpoint</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--End Checkpoints-->
+
+
+
 <!--BibTex citation -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -456,6 +471,7 @@
     </code></pre>
   </div>
 </section>
+
 <!--End BibTex citation -->
 </body>
 
