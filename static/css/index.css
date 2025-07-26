@@ -191,3 +191,8 @@ body {
   padding: 30px;
   position: relative;
 }
+
+.video-container iframe {
+  border-radius: 12px;
+}
+
